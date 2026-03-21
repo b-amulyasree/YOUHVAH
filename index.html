@@ -8,90 +8,75 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
-/* ── RESET ── */
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 html,body{min-height:100%;font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;background:#F7F4EB;color:#313852;}
-
-/* ── SCREENS ── */
 .screen{display:none;min-height:100vh;padding-bottom:3rem;}
 .screen.active{display:block;}
-
-/* ── TOPBAR ── */
+/* TOPBAR */
 .topbar{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.25rem 0;}
 .logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:#313852;letter-spacing:-0.5px;}
 .logo span{color:#4A5270;}
 .back{font-size:13px;color:#4A5270;cursor:pointer;background:none;border:none;font-family:'DM Sans',sans-serif;}
-.btn-sm{padding:7px 16px;border-radius:8px;border:1.5px solid rgba(49,56,82,0.2);background:transparent;color:#4A5270;font-size:13px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;}
+.btn-sm{padding:7px 16px;border-radius:8px;border:1.5px solid rgba(49,56,82,0.2);background:transparent;color:#4A5270;font-size:13px;font-weight:500;cursor:pointer;}
 .btn-sm:hover{border-color:#313852;color:#313852;}
-
-/* ── HOME HERO ── */
+/* HERO */
 .hero{padding:2.5rem 1.25rem 2rem;}
 .hero-tag{display:inline-block;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#4A5270;background:#E4E7F0;padding:4px 12px;border-radius:100px;margin-bottom:1rem;}
 .hero-title{font-family:'Syne',sans-serif;font-size:clamp(30px,7vw,46px);font-weight:700;line-height:1.1;color:#313852;letter-spacing:-1.5px;margin-bottom:0.75rem;}
 .hero-sub{font-size:15px;color:#4A5270;margin-bottom:2rem;}
 .home-btns{display:flex;flex-direction:column;gap:12px;padding:0 1.25rem;}
-.btn-primary{width:100%;padding:16px;border-radius:12px;border:none;background:#313852;color:#F7F4EB;font-family:'Syne',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:opacity 0.15s;text-align:center;}
+.btn-primary{width:100%;padding:16px;border-radius:12px;border:none;background:#313852;color:#F7F4EB;font-family:'Syne',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:opacity 0.15s;}
 .btn-primary:hover{opacity:0.85;}
 .btn-primary:disabled{opacity:0.3;cursor:not-allowed;}
-.btn-secondary{width:100%;padding:15px;border-radius:12px;border:1.5px solid rgba(49,56,82,0.2);background:#fff;color:#313852;font-family:'Syne',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:all 0.15s;}
-.btn-secondary:hover{border-color:#313852;background:#F7F4EB;}
-
-/* ── INTERESTS ── */
+.btn-secondary{width:100%;padding:15px;border-radius:12px;border:1.5px solid rgba(49,56,82,0.2);background:#fff;color:#313852;font-family:'Syne',sans-serif;font-size:16px;font-weight:700;cursor:pointer;}
+.btn-secondary:hover{border-color:#313852;}
+/* INTERESTS */
 .sec-label{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:#313852;padding:0 1.25rem;margin-bottom:4px;}
 .sec-hint{font-size:13px;color:#4A5270;padding:0 1.25rem;margin-bottom:1rem;}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;padding:0 1.25rem;margin-bottom:1.5rem;}
-.chip{padding:10px 8px;border-radius:8px;border:1px solid rgba(49,56,82,0.2);background:#fff;font-size:13px;color:#4A5270;cursor:pointer;text-align:center;transition:all 0.15s;user-select:none;font-family:'DM Sans',sans-serif;}
+.igrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;padding:0 1.25rem;margin-bottom:1.5rem;}
+.chip{padding:10px 8px;border-radius:8px;border:1px solid rgba(49,56,82,0.2);background:#fff;font-size:13px;color:#4A5270;cursor:pointer;text-align:center;transition:all 0.15s;user-select:none;}
 .chip:hover{border-color:#313852;color:#313852;background:#E4E7F0;}
 .chip.on{background:#313852;border-color:#313852;color:#F7F4EB;font-weight:500;}
-.ghost{display:block;width:calc(100% - 2.5rem);margin:8px 1.25rem 0;padding:12px;border-radius:12px;border:1px solid rgba(49,56,82,0.2);background:transparent;color:#4A5270;font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif;}
-.ghost:hover{border-color:#313852;color:#313852;}
-
-/* ── CAREER CARDS ── */
-.list{padding:0 1.25rem;}
-.card{background:#fff;border:1px solid rgba(49,56,82,0.1);border-radius:14px;padding:1rem 1.25rem;margin-bottom:10px;cursor:pointer;transition:border-color 0.15s,transform 0.1s;}
-.card:hover{border-color:#313852;transform:translateY(-1px);}
-.card:active{transform:scale(0.99);}
-.card-top{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
-.card-emoji{font-size:24px;line-height:1;}
-.card-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:#313852;}
+.ghost{display:block;width:calc(100% - 2.5rem);margin:8px 1.25rem 0;padding:12px;border-radius:12px;border:1px solid rgba(49,56,82,0.2);background:transparent;color:#4A5270;font-size:14px;cursor:pointer;}
+/* CAREER CARDS */
+.clist{padding:0 1.25rem;}
+.ccard{background:#fff;border:1px solid rgba(49,56,82,0.1);border-radius:14px;padding:1rem 1.25rem;margin-bottom:10px;cursor:pointer;transition:border-color 0.15s,transform 0.1s;}
+.ccard:hover{border-color:#313852;transform:translateY(-1px);}
+.ccard:active{transform:scale(0.99);}
+.ctop{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.cemoji{font-size:24px;}
+.ctitle{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:#313852;}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;}
 .tag{font-size:11px;padding:2px 10px;border-radius:100px;background:#E8ECF0;color:#4A5270;font-weight:500;}
-.card-match{font-size:13px;color:#4A5270;line-height:1.5;}
-
-/* ── TABS ── */
+.cmatch{font-size:13px;color:#4A5270;line-height:1.5;}
+/* TABS */
 .tabs{display:flex;border-bottom:1px solid rgba(49,56,82,0.1);margin-top:1rem;padding:0 1.25rem;}
-.tab{flex:1;padding:10px 0;text-align:center;font-size:14px;color:#8A93A8;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;background:none;border-left:none;border-right:none;border-top:none;font-family:'DM Sans',sans-serif;transition:color 0.15s;}
+.tab{flex:1;padding:10px 0;text-align:center;font-size:14px;color:#8A93A8;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;background:none;border-left:none;border-right:none;border-top:none;font-family:'DM Sans',sans-serif;}
 .tab.on{color:#313852;border-bottom:2px solid #313852;font-weight:500;}
-
-/* ── DETAIL ── */
+/* DETAIL */
 .pane{padding:1.25rem;}
-.det-head{display:flex;align-items:center;gap:12px;margin-bottom:1.25rem;}
-.det-icon{width:52px;height:52px;border-radius:8px;background:#E8ECF0;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;}
-.det-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:#313852;}
-.sal-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1rem;}
-.sal-card{background:#EDEAE0;border-radius:8px;padding:12px 14px;}
-.sal-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.8px;color:#8A93A8;margin-bottom:4px;}
-.sal-val{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:#313852;}
-.info{background:#EDEAE0;border-radius:8px;padding:1rem;margin-bottom:10px;}
-.info-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.8px;color:#8A93A8;margin-bottom:6px;}
-.info-text{font-size:14px;color:#313852;line-height:1.65;}
+.dhead{display:flex;align-items:center;gap:12px;margin-bottom:1.25rem;}
+.dicon{width:52px;height:52px;border-radius:8px;background:#E8ECF0;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;}
+.dtitle{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:#313852;}
+.srow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1rem;}
+.sc{background:#EDEAE0;border-radius:8px;padding:12px 14px;}
+.slabel{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.8px;color:#8A93A8;margin-bottom:4px;}
+.sval{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:#313852;}
+.iblock{background:#EDEAE0;border-radius:8px;padding:1rem;margin-bottom:10px;}
+.ilabel{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.8px;color:#8A93A8;margin-bottom:6px;}
+.itext{font-size:14px;color:#313852;line-height:1.65;}
 .skills{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}
-
-/* ── ROADMAP ── */
+/* ROADMAP */
 .rm-intro{font-size:14px;color:#4A5270;margin-bottom:1.25rem;}
 .step{display:flex;gap:14px;margin-bottom:20px;align-items:flex-start;}
-.step-n{width:30px;height:30px;border-radius:50%;background:#313852;color:#F7F4EB;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
-.step-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:#313852;}
-.step-dur{font-size:12px;color:#8A93A8;font-weight:400;}
-.step-desc{font-size:13px;color:#4A5270;margin-top:3px;line-height:1.55;}
+.stepn{width:30px;height:30px;border-radius:50%;background:#313852;color:#F7F4EB;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.steptitle{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:#313852;}
+.stepdur{font-size:12px;color:#8A93A8;font-weight:400;}
+.stepdesc{font-size:13px;color:#4A5270;margin-top:3px;line-height:1.55;}
 .save-cta{background:#313852;border-radius:12px;padding:1.25rem;margin-top:1.5rem;text-align:center;}
 .save-cta p{color:rgba(247,244,235,0.7);font-size:13px;margin-bottom:10px;}
 .save-cta-btn{background:#F7F4EB;color:#313852;border:none;padding:12px 24px;border-radius:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;cursor:pointer;}
-.save-cta-btn:hover{opacity:0.9;}
-.email-btn{width:100%;padding:14px;border-radius:12px;border:none;background:#313852;color:#F7F4EB;font-family:'Syne',sans-serif;font-size:15px;font-weight:700;cursor:pointer;margin-top:1rem;}
-.email-btn:hover{opacity:0.85;}
-
-/* ── CHAT ── */
+/* CHAT */
 .chat-wrap{display:flex;flex-direction:column;height:calc(100vh - 180px);padding:1.25rem;gap:10px;}
 .chat-msgs{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:10px;padding-bottom:8px;}
 .msg{max-width:82%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.6;}
@@ -102,19 +87,18 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;font-size:16px;line-h
 .chat-row input:focus{border-color:#313852;}
 .chat-row input::placeholder{color:#8A93A8;}
 .chat-row button{padding:11px 20px;border-radius:8px;border:none;background:#313852;color:#F7F4EB;font-family:'Syne',sans-serif;font-size:14px;font-weight:700;cursor:pointer;}
-
-/* ── AUTH ── */
+/* AUTH */
 .auth-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem 1.25rem;}
 .auth-card{background:#fff;border-radius:14px;box-shadow:0 4px 24px rgba(49,56,82,0.08);border:1px solid rgba(49,56,82,0.1);padding:2rem 1.75rem;width:100%;max-width:420px;}
-.auth-logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:#313852;letter-spacing:-0.5px;margin-bottom:0.25rem;}
-.auth-logo span{color:#4A5270;}
-.auth-sub{font-size:13px;color:#4A5270;margin-bottom:1.5rem;}
+.alogo{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:#313852;letter-spacing:-0.5px;margin-bottom:4px;}
+.alogo span{color:#4A5270;}
+.asub{font-size:13px;color:#4A5270;margin-bottom:1.5rem;}
 .atabs{display:flex;border:1px solid rgba(49,56,82,0.2);border-radius:8px;padding:3px;margin-bottom:1.25rem;gap:3px;}
-.atab{flex:1;padding:8px;border-radius:6px;border:none;background:transparent;font-size:14px;font-weight:500;color:#4A5270;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.15s;}
+.atab{flex:1;padding:8px;border-radius:6px;border:none;background:transparent;font-size:14px;font-weight:500;color:#4A5270;cursor:pointer;font-family:'DM Sans',sans-serif;}
 .atab.on{background:#313852;color:#F7F4EB;}
 .fg{margin-bottom:1rem;}
 .fg label{display:block;font-size:13px;font-weight:600;color:#313852;margin-bottom:6px;}
-.fg input{width:100%;padding:10px 14px;border:1.5px solid rgba(49,56,82,0.2);border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;color:#313852;background:#F7F4EB;outline:none;transition:border-color 0.15s;}
+.fg input{width:100%;padding:10px 14px;border:1.5px solid rgba(49,56,82,0.2);border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;color:#313852;background:#F7F4EB;outline:none;}
 .fg input:focus{border-color:#313852;background:#fff;}
 .pw-wrap{position:relative;}
 .pw-wrap input{padding-right:44px;width:100%;padding:10px 44px 10px 14px;border:1.5px solid rgba(49,56,82,0.2);border-radius:8px;font-size:14px;font-family:'DM Sans',sans-serif;color:#313852;background:#F7F4EB;outline:none;}
@@ -129,22 +113,18 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;font-size:16px;line-h
 .alert.err{background:#fef2f2;color:#dc2626;border:1px solid #fecaca;display:block;}
 .alert.suc{background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;display:block;}
 .alert.wrn{background:#fffbeb;color:#d97706;border:1px solid #fde68a;display:block;}
-
-/* ── VERIFY ── */
 .info-note{background:#E4E7F0;border-radius:8px;padding:12px 14px;font-size:13px;color:#4A5270;margin-bottom:1.25rem;line-height:1.5;}
-
-/* ── DASHBOARD ── */
+/* DASHBOARD */
 .user-pill{font-size:13px;font-weight:600;color:#313852;background:#E4E7F0;padding:5px 14px;border-radius:100px;}
 .welcome{background:#313852;color:#F7F4EB;border-radius:14px;padding:1.75rem;margin-bottom:1.25rem;}
 .welcome h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:6px;}
 .welcome p{font-size:14px;opacity:0.75;}
-.dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;}
 .dtile{background:#fff;border:1px solid rgba(49,56,82,0.1);border-radius:14px;padding:1.25rem;}
 .dtile-icon{font-size:22px;margin-bottom:8px;}
 .dtile-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.6px;color:#8A93A8;margin-bottom:4px;}
 .dtile-val{font-size:14px;font-weight:600;color:#313852;word-break:break-all;}
-
-/* ── LOADING ── */
+/* LOADING */
 .loading{font-size:14px;color:#4A5270;padding:1.5rem 0;}
 .cur{display:inline-block;width:2px;height:14px;background:#313852;margin-left:3px;vertical-align:middle;animation:blink 0.7s infinite;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
@@ -152,9 +132,7 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;font-size:16px;line-h
 </head>
 <body>
 
-<!-- ══════════════════════════════
-     SCREEN 1 — HOME
-══════════════════════════════ -->
+<!-- ══ SCREEN 1: HOME ══ -->
 <div id="s-home" class="screen active">
   <div class="topbar">
     <div class="logo">You<span>hvah</span></div>
@@ -171,9 +149,7 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;font-size:16px;line-h
   </div>
 </div>
 
-<!-- ══════════════════════════════
-     SCREEN 2 — PICK INTERESTS
-══════════════════════════════ -->
+<!-- ══ SCREEN 2: INTERESTS ══ -->
 <div id="s-interests" class="screen">
   <div class="topbar">
     <button class="back" onclick="goTo('s-home')">← Back</button>
@@ -183,14 +159,12 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;font-size:16px;line-h
   <div style="padding:1.5rem 0 0;">
     <div class="sec-label">What are you into?</div>
     <p class="sec-hint">Pick everything that feels like you.</p>
-    <div class="grid" id="ig"></div>
+    <div class="igrid" id="ig"></div>
     <button class="btn-primary" id="btn-find" disabled onclick="findCareers()" style="width:calc(100% - 2.5rem);margin:0 1.25rem;">Show my career matches →</button>
   </div>
 </div>
 
-<!-- ══════════════════════════════
-     SCREEN 3 — CAREER MATCHES
-══════════════════════════════ -->
+<!-- ══ SCREEN 3: CAREER MATCHES ══ -->
 <div id="s-careers" class="screen">
   <div class="topbar">
     <button class="back" onclick="goTo('s-interests')">← Back</button>
@@ -200,14 +174,12 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;font-size:16px;line-h
   <div style="padding:1.5rem 0 0;">
     <div class="sec-label">Your matches</div>
     <p class="sec-hint" id="careers-sub"></p>
-    <div class="list" id="careers-list"></div>
+    <div class="clist" id="careers-list"></div>
     <button class="ghost" onclick="goTo('s-interests')">← Change interests</button>
   </div>
 </div>
 
-<!-- ══════════════════════════════
-     SCREEN 4 — CAREER DETAIL
-══════════════════════════════ -->
+<!-- ══ SCREEN 4: CAREER DETAIL ══ -->
 <div id="s-detail" class="screen">
   <div class="topbar">
     <button class="back" onclick="goTo('s-careers')">← Back</button>
@@ -232,9 +204,7 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;font-size:16px;line-h
   </div>
 </div>
 
-<!-- ══════════════════════════════
-     SCREEN 5 — AI CHAT
-══════════════════════════════ -->
+<!-- ══ SCREEN 5: AI CHAT ══ -->
 <div id="s-chat" class="screen">
   <div class="topbar">
     <button class="back" onclick="goTo('s-home')">← Back</button>
@@ -254,25 +224,20 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;font-size:16px;line-h
   </div>
 </div>
 
-<!-- ══════════════════════════════
-     SCREEN 6 — SAVE GATE (login/signup)
-     Only shown when saving roadmap
-══════════════════════════════ -->
+<!-- ══ SCREEN 6: SAVE GATE (login/signup) ══ -->
 <div id="s-gate" class="screen">
   <div class="auth-wrap">
     <div class="auth-card">
       <button class="back" style="margin-bottom:1rem;display:inline-block;" onclick="gateBack()">← Back</button>
-      <div class="auth-logo">You<span>hvah</span></div>
-      <p class="auth-sub" id="gate-sub">Save your roadmap &amp; get it emailed to you</p>
-
+      <div class="alogo">You<span>hvah</span></div>
+      <p class="asub">Save your roadmap &amp; get it emailed to you</p>
       <div class="atabs">
-        <button class="atab on" id="atab-login" onclick="switchAuth('login')">Sign in</button>
-        <button class="atab" id="atab-signup" onclick="switchAuth('signup')">Create account</button>
+        <button class="atab on" id="atab-l" onclick="switchAuth('l')">Sign in</button>
+        <button class="atab" id="atab-s" onclick="switchAuth('s')">Create account</button>
       </div>
-
       <!-- LOGIN -->
-      <div id="f-login">
-        <div class="alert" id="login-alert"></div>
+      <div id="f-l">
+        <div class="alert" id="l-alert"></div>
         <div class="fg"><label>Email</label><input type="email" id="l-email" placeholder="you@example.com"/><span class="ferr" id="l-email-err"></span></div>
         <div class="fg"><label>Password</label>
           <div class="pw-wrap"><input type="password" id="l-pw" placeholder="Your password"/><button class="eye" onclick="togglePw('l-pw',this)">👁</button></div>
@@ -280,10 +245,9 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;font-size:16px;line-h
         </div>
         <button class="btn-primary" style="width:100%;margin:0;" onclick="handleLogin()">Sign in →</button>
       </div>
-
       <!-- SIGNUP -->
-      <div id="f-signup" style="display:none;">
-        <div class="alert" id="signup-alert"></div>
+      <div id="f-s" style="display:none;">
+        <div class="alert" id="s-alert"></div>
         <div class="fg"><label>Full name</label><input type="text" id="s-name" placeholder="Your name"/><span class="ferr" id="s-name-err"></span></div>
         <div class="fg"><label>Email</label><input type="email" id="s-email" placeholder="you@example.com"/><span class="ferr" id="s-email-err"></span></div>
         <div class="fg"><label>Password</label>
@@ -302,29 +266,25 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;font-size:16px;line-h
   </div>
 </div>
 
-<!-- ══════════════════════════════
-     SCREEN 7 — VERIFY EMAIL
-══════════════════════════════ -->
+<!-- ══ SCREEN 7: VERIFY ══ -->
 <div id="s-verify" class="screen">
   <div class="auth-wrap">
     <div class="auth-card" style="text-align:center;">
       <div style="font-size:52px;margin-bottom:1rem;">📬</div>
-      <div class="auth-logo" style="justify-content:center;display:flex;">You<span>hvah</span></div>
+      <div class="alogo" style="display:block;">You<span>hvah</span></div>
       <h2 style="font-family:'Syne',sans-serif;color:#313852;font-size:20px;margin:12px 0 8px;">Check your inbox</h2>
       <p style="font-size:14px;color:#4A5270;line-height:1.6;margin-bottom:1.25rem;">
-        We sent a verification link to<br/><strong id="verify-email"></strong>
+        We sent a verification link to<br/><strong id="v-email"></strong>
       </p>
       <div class="info-note">Once verified, come back and sign in to access your saved roadmap.</div>
-      <button class="btn-primary" style="width:100%;margin:0 0 8px;" onclick="goTo('s-gate');switchAuth('login')">Already verified? Sign in →</button>
+      <button class="btn-primary" style="width:100%;margin:0 0 8px;" onclick="goTo('s-gate');switchAuth('l')">Already verified? Sign in →</button>
       <button class="ghost" style="width:100%;margin:0;" onclick="resend()">Resend email</button>
-      <p id="resend-msg" style="font-size:13px;color:#4A5270;margin-top:8px;display:none;">Email sent! Check your inbox.</p>
+      <p id="resend-msg" style="font-size:13px;color:#4A5270;margin-top:8px;display:none;">Sent! Check your inbox.</p>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════
-     SCREEN 8 — DASHBOARD
-══════════════════════════════ -->
+<!-- ══ SCREEN 8: DASHBOARD ══ -->
 <div id="s-dashboard" class="screen">
   <div class="topbar">
     <div class="logo">You<span>hvah</span></div>
@@ -338,7 +298,7 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;font-size:16px;line-h
       <h2>Welcome back, <span id="d-name"></span> 👋</h2>
       <p>Your account is verified. Your roadmap is saved.</p>
     </div>
-    <div class="dash-grid">
+    <div class="dgrid">
       <div class="dtile"><div class="dtile-icon">✉️</div><div class="dtile-label">Email</div><div class="dtile-val" id="d-email"></div></div>
       <div class="dtile"><div class="dtile-icon">✅</div><div class="dtile-label">Status</div><div class="dtile-val" style="color:#16a34a;">Verified</div></div>
       <div class="dtile"><div class="dtile-icon">🗺️</div><div class="dtile-label">Saved career</div><div class="dtile-val" id="d-career">None yet</div></div>
@@ -348,31 +308,29 @@ html,body{min-height:100%;font-family:'DM Sans',sans-serif;font-size:16px;line-h
 </div>
 
 <script>
-// ═══════════════════════════════════════════════════════
-//  CONFIG
-// ═══════════════════════════════════════════════════════
-const API_KEY  = "";
-const MODEL    = "claude-sonnet-4-20250514";
-const BACKEND  = "https://youhvah-backend.onrender.com/api/auth";
+// ══════════════════════════════════════════════════
+//  CONFIG — backend URL only, no API key here
+// ══════════════════════════════════════════════════
+const BACKEND = "https://youhvah-backend.onrender.com";
+const MODEL   = "claude-sonnet-4-20250514";
 
-// ═══════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════
 //  STATE
-// ═══════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════
 const INTERESTS = ["Technology","Science","Art & Design","Music","Business","Medicine","Law","Teaching","Writing","Nature","Sports","Cooking","Maths","Psychology","Finance","Engineering"];
-const sel       = new Set();
-let career      = null;
-let roadmap     = null;
-let rmLoaded    = false;
-let carHist     = [];
-let mainHist    = [];
-let token       = localStorage.getItem("yhv_token");
-let pendingEmail= null;
+const sel    = new Set();
+let career   = null;
+let roadmap  = null;
+let rmLoaded = false;
+let carHist  = [];
+let mainHist = [];
+let token    = localStorage.getItem("yhv_token");
 
-// ═══════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════
 //  BOOT
-// ═══════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════
 document.addEventListener("DOMContentLoaded", () => {
-  // Build interest chips
+  // Build chips
   const grid = document.getElementById("ig");
   INTERESTS.forEach(label => {
     const el = document.createElement("div");
@@ -391,50 +349,41 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("inp-career").addEventListener("keydown", e => { if(e.key==="Enter") sendChat("career"); });
   document.getElementById("l-pw").addEventListener("keydown",       e => { if(e.key==="Enter") handleLogin(); });
 
-  // Check for verified=true redirect from backend
+  // Handle redirect from email verification
   const params = new URLSearchParams(window.location.search);
   if (params.get("verified") === "true") {
     window.history.replaceState({}, "", window.location.pathname);
-    setAlert("login-alert", "✅ Email verified! You can now sign in.", "suc");
-    goTo("s-gate");
-    switchAuth("login");
+    setAlert("l-alert", "✅ Email verified! You can now sign in.", "suc");
+    goTo("s-gate"); switchAuth("l");
     return;
   }
   if (params.get("verified") === "false") {
     window.history.replaceState({}, "", window.location.pathname);
-    setAlert("login-alert", "❌ Verification link expired. Please sign up again.", "err");
-    goTo("s-gate");
-    switchAuth("signup");
+    setAlert("s-alert", "❌ Verification link expired. Please sign up again.", "err");
+    goTo("s-gate"); switchAuth("s");
     return;
   }
 
-  // Restore session
   if (token) { fetchMe(); } else { goTo("s-home"); }
 });
 
-// ═══════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════
 //  NAVIGATION
-// ═══════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════
 function goTo(id) {
-  document.querySelectorAll(".screen").forEach(s => { s.style.display = "none"; s.classList.remove("active"); });
+  document.querySelectorAll(".screen").forEach(s => { s.style.display="none"; s.classList.remove("active"); });
   const el = document.getElementById(id);
   el.style.display = "block";
   el.classList.add("active");
-  window.scrollTo(0, 0);
+  window.scrollTo(0,0);
 }
 
-function gateBack() {
-  // Go back to detail if they had a roadmap, else home
-  if (roadmap) { goTo("s-detail"); switchTab("rm"); }
-  else goTo("s-home");
-}
+function gateBack() { roadmap ? (goTo("s-detail"), switchTab("rm")) : goTo("s-home"); }
 
 function openChat() {
   goTo("s-chat");
-  const msgs = document.getElementById("msgs-main");
-  if (mainHist.length === 0) {
-    addMsg(msgs, "bot", "Hey! I'm Youhvah AI. Ask me anything — careers, what to study, salaries, how to get into a field. Straight answers only.");
-  }
+  if (mainHist.length === 0)
+    addMsg(document.getElementById("msgs-main"), "bot", "Hey! I'm Youhvah AI. Ask me anything — careers, what to study, salaries, how to get into a field. Straight answers only.");
   setTimeout(() => document.getElementById("inp-main").focus(), 100);
 }
 
@@ -446,25 +395,20 @@ function switchTab(t) {
 }
 
 function switchAuth(t) {
-  document.getElementById("atab-login").classList.toggle("on",  t==="login");
-  document.getElementById("atab-signup").classList.toggle("on", t==="signup");
-  document.getElementById("f-login").style.display  = t==="login"  ? "" : "none";
-  document.getElementById("f-signup").style.display = t==="signup" ? "" : "none";
+  document.getElementById("atab-l").classList.toggle("on", t==="l");
+  document.getElementById("atab-s").classList.toggle("on", t==="s");
+  document.getElementById("f-l").style.display = t==="l" ? "" : "none";
+  document.getElementById("f-s").style.display = t==="s" ? "" : "none";
   clearErrors();
 }
 
-// ═══════════════════════════════════════════════════════
-//  CLAUDE API
-// ═══════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════
+//  CLAUDE API — calls go through backend proxy
+// ══════════════════════════════════════════════════
 async function callClaude(messages, system) {
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
+  const res = await fetch(`${BACKEND}/api/claude`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": API_KEY,
-      "anthropic-version": "2023-06-01",
-      "anthropic-dangerous-direct-browser-access": "true"
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ model: MODEL, max_tokens: 1000, system, messages })
   });
   const data = await res.json();
@@ -473,14 +417,10 @@ async function callClaude(messages, system) {
 }
 
 async function streamClaude(messages, system, onChunk) {
-  const res = await fetch("http://localhost:5000/api/claude", {
-     method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({ model: MODEL, max_tokens: 1000, system, messages })
-});
-    body: JSON.stringify({ model: MODEL, max_tokens: 800, stream: true, system, messages })
+  const res = await fetch(`${BACKEND}/api/claude/stream`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ model: MODEL, max_tokens: 800, system, messages })
   });
   const reader = res.body.getReader();
   const dec    = new TextDecoder();
@@ -492,7 +432,7 @@ async function streamClaude(messages, system, onChunk) {
       if (!line.startsWith("data: ")) continue;
       try {
         const d = JSON.parse(line.slice(6));
-        if (d.type === "content_block_delta" && d.delta?.text) { full += d.delta.text; onChunk(full); }
+        if (d.type==="content_block_delta" && d.delta?.text) { full+=d.delta.text; onChunk(full); }
       } catch(_) {}
     }
   }
@@ -509,9 +449,9 @@ function parseJSON(text) {
   return null;
 }
 
-// ═══════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════
 //  FIND CAREERS
-// ═══════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════
 async function findCareers() {
   const interests = [...sel].join(", ");
   document.getElementById("careers-sub").textContent = "Based on: " + interests;
@@ -525,198 +465,161 @@ Format: [{"title":"Career Name","emoji":"single emoji","tags":["tag1","tag2"],"m
 
   let text;
   try { text = await callClaude([{role:"user",content:"Student interests: "+interests+"\n\nJSON only:"}], system); }
-  catch(err) { list.innerHTML = `<p class="loading" style="color:#dc2626;">${err.message}</p>`; return; }
+  catch(err) { list.innerHTML=`<p class="loading" style="color:#dc2626;">${err.message}</p>`; return; }
 
   const careers = parseJSON(text);
-  if (!careers || !Array.isArray(careers) || careers.length === 0) {
-    list.innerHTML = `<p class="loading">Couldn't load. <span style="cursor:pointer;text-decoration:underline;" onclick="findCareers()">Retry</span></p>`;
+  if (!careers||!Array.isArray(careers)||careers.length===0) {
+    list.innerHTML=`<p class="loading">Couldn't load. <span style="cursor:pointer;text-decoration:underline;" onclick="findCareers()">Retry</span></p>`;
     return;
   }
-
-  list.innerHTML = "";
+  list.innerHTML="";
   careers.forEach(c => {
-    const el = document.createElement("div");
-    el.className = "card";
-    el.innerHTML = `<div class="card-top"><span class="card-emoji">${c.emoji||"💼"}</span><span class="card-title">${c.title}</span></div>
+    const el=document.createElement("div"); el.className="ccard";
+    el.innerHTML=`<div class="ctop"><span class="cemoji">${c.emoji||"💼"}</span><span class="ctitle">${c.title}</span></div>
       <div class="tags">${(c.tags||[]).map(t=>`<span class="tag">${t}</span>`).join("")}</div>
-      <div class="card-match">${c.match||""}</div>`;
-    el.addEventListener("click", () => openCareer(c));
+      <div class="cmatch">${c.match||""}</div>`;
+    el.addEventListener("click",()=>openCareer(c));
     list.appendChild(el);
   });
 }
 
-// ═══════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════
 //  CAREER DETAIL
-// ═══════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════
 async function openCareer(c) {
-  career   = c;
-  roadmap  = null;
-  rmLoaded = false;
-  carHist  = [];
-  goTo("s-detail");
-  switchTab("ov");
-
-  const pane = document.getElementById("pane-ov");
-  pane.innerHTML = `<div class="det-head"><div class="det-icon">${c.emoji||"💼"}</div><div class="det-title">${c.title}</div></div>
+  career=c; roadmap=null; rmLoaded=false; carHist=[];
+  goTo("s-detail"); switchTab("ov");
+  const pane=document.getElementById("pane-ov");
+  pane.innerHTML=`<div class="dhead"><div class="dicon">${c.emoji||"💼"}</div><div class="dtitle">${c.title}</div></div>
     <p class="loading">Loading details<span class="cur"></span></p>`;
 
-  const system = `You are a career guidance AI for Indian students.
+  const system=`You are a career guidance AI for Indian students.
 Respond ONLY with a JSON object. No markdown, no explanation.
 Format: {"minSalary":"₹X LPA","maxSalary":"₹X LPA","role":"2-3 sentences on daily work","impact":"2 sentences on social importance","skills":["s1","s2","s3","s4"]}`;
 
   let text;
-  try { text = await callClaude([{role:"user",content:"Career details for: "+c.title+"\n\nJSON only:"}], system); }
-  catch(err) { pane.innerHTML = `<p style="padding:1.25rem;color:#dc2626;font-size:13px;">${err.message}</p>`; return; }
+  try { text=await callClaude([{role:"user",content:"Career details for: "+c.title+"\n\nJSON only:"}],system); }
+  catch(err) { pane.innerHTML=`<p style="padding:1.25rem;color:#dc2626;font-size:13px;">${err.message}</p>`; return; }
 
-  const info = parseJSON(text) || {};
-  pane.innerHTML = `
-    <div class="det-head"><div class="det-icon">${c.emoji||"💼"}</div><div class="det-title">${c.title}</div></div>
-    <div class="sal-row">
-      <div class="sal-card"><div class="sal-label">Min salary</div><div class="sal-val">${info.minSalary||"₹3 LPA"}</div></div>
-      <div class="sal-card"><div class="sal-label">Max salary</div><div class="sal-val">${info.maxSalary||"₹20 LPA"}</div></div>
+  const info=parseJSON(text)||{};
+  pane.innerHTML=`
+    <div class="dhead"><div class="dicon">${c.emoji||"💼"}</div><div class="dtitle">${c.title}</div></div>
+    <div class="srow">
+      <div class="sc"><div class="slabel">Min salary</div><div class="sval">${info.minSalary||"₹3 LPA"}</div></div>
+      <div class="sc"><div class="slabel">Max salary</div><div class="sval">${info.maxSalary||"₹20 LPA"}</div></div>
     </div>
-    <div class="info"><div class="info-label">What you'll do</div><p class="info-text">${info.role||""}</p></div>
-    <div class="info"><div class="info-label">Impact on society</div><p class="info-text">${info.impact||""}</p></div>
-    <div class="info"><div class="info-label">Key skills</div><div class="skills">${(info.skills||[]).map(s=>`<span class="tag">${s}</span>`).join("")}</div></div>
+    <div class="iblock"><div class="ilabel">What you'll do</div><p class="itext">${info.role||""}</p></div>
+    <div class="iblock"><div class="ilabel">Impact on society</div><p class="itext">${info.impact||""}</p></div>
+    <div class="iblock"><div class="ilabel">Key skills</div><div class="skills">${(info.skills||[]).map(s=>`<span class="tag">${s}</span>`).join("")}</div></div>
     <button class="btn-primary" style="width:100%;margin-top:1rem;" onclick="switchTab('rm');loadRoadmap()">See my roadmap →</button>`;
 
-  const msgs = document.getElementById("msgs-career");
-  msgs.innerHTML = "";
-  addMsg(msgs, "bot", `Ask me anything about becoming a ${c.title}.`);
+  const msgs=document.getElementById("msgs-career");
+  msgs.innerHTML="";
+  addMsg(msgs,"bot",`Ask me anything about becoming a ${c.title}.`);
 }
 
-// ═══════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════
 //  ROADMAP
-// ═══════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════
 async function loadRoadmap() {
-  if (rmLoaded) return;
-  rmLoaded = true;
-  const pane = document.getElementById("pane-rm");
-  pane.innerHTML = `<p class="loading">Building your roadmap<span class="cur"></span></p>`;
+  if(rmLoaded)return; rmLoaded=true;
+  const pane=document.getElementById("pane-rm");
+  pane.innerHTML=`<p class="loading">Building your roadmap<span class="cur"></span></p>`;
 
-  const system = `You are a career guidance AI for Indian students.
+  const system=`You are a career guidance AI for Indian students.
 Respond ONLY with a JSON array. No markdown, no explanation.
 Format: [{"step":"Title","desc":"1-2 sentences on what to do","duration":"e.g. 2 years"}]`;
 
   let text;
-  try { text = await callClaude([{role:"user",content:"Step-by-step roadmap to become: "+career.title+"\n\nJSON only:"}], system); }
-  catch(err) { pane.innerHTML = `<p style="color:#dc2626;font-size:13px;">${err.message}</p>`; rmLoaded=false; return; }
+  try { text=await callClaude([{role:"user",content:"Step-by-step roadmap to become: "+career.title+"\n\nJSON only:"}],system); }
+  catch(err) { pane.innerHTML=`<p style="color:#dc2626;font-size:13px;">${err.message}</p>`; rmLoaded=false; return; }
 
-  const steps = parseJSON(text);
-  if (!steps || !Array.isArray(steps)) {
-    pane.innerHTML = `<p class="loading">Couldn't load. <span style="cursor:pointer;text-decoration:underline;" onclick="rmLoaded=false;loadRoadmap()">Retry</span></p>`;
+  const steps=parseJSON(text);
+  if(!steps||!Array.isArray(steps)) {
+    pane.innerHTML=`<p class="loading">Couldn't load. <span style="cursor:pointer;text-decoration:underline;" onclick="rmLoaded=false;loadRoadmap()">Retry</span></p>`;
     return;
   }
-
-  roadmap = steps;
-  const stepsHtml = steps.map((s,i) => `
-    <div class="step">
-      <div class="step-n">${i+1}</div>
-      <div><div class="step-title">${s.step} <span class="step-dur">(${s.duration||""})</span></div><div class="step-desc">${s.desc}</div></div>
-    </div>`).join("");
+  roadmap=steps;
+  const stepsHtml=steps.map((s,i)=>`
+    <div class="step"><div class="stepn">${i+1}</div>
+    <div><div class="steptitle">${s.step} <span class="stepdur">(${s.duration||""})</span></div>
+    <div class="stepdesc">${s.desc}</div></div></div>`).join("");
 
   const savePart = token
-    ? `<button class="email-btn" onclick="saveRoadmapNow()">📧 Email me this roadmap</button>`
+    ? `<button class="btn-primary" style="width:100%;margin-top:1rem;" onclick="saveRoadmapNow()">📧 Email me this roadmap</button>`
     : `<div class="save-cta"><p>Sign up to save this roadmap &amp; get it emailed to you</p><button class="save-cta-btn" onclick="goTo('s-gate')">Save my roadmap →</button></div>`;
 
-  pane.innerHTML = `<p class="rm-intro">Your path to becoming a ${career.title}</p>${stepsHtml}${savePart}`;
+  pane.innerHTML=`<p class="rm-intro">Your path to becoming a ${career.title}</p>${stepsHtml}${savePart}`;
 }
 
 async function saveRoadmapNow() {
-  if (!token || !roadmap) return;
+  if(!token||!roadmap)return;
   try {
-    const res  = await fetch(`${BACKEND}/save-roadmap`, {
-      method: "POST",
-      headers: { "Content-Type":"application/json", "Authorization":"Bearer "+token },
-      body: JSON.stringify({ careerTitle: career.title, careerEmoji: career.emoji, roadmapSteps: roadmap })
+    const res=await fetch(`${BACKEND}/api/auth/save-roadmap`,{
+      method:"POST",
+      headers:{"Content-Type":"application/json","Authorization":"Bearer "+token},
+      body:JSON.stringify({careerTitle:career.title,careerEmoji:career.emoji,roadmapSteps:roadmap})
     });
-    const data = await res.json();
-    alert(data.success ? "✅ Roadmap saved and emailed to you!" : "Error: "+data.message);
-  } catch(err) { alert("Error: "+err.message); }
+    const data=await res.json();
+    alert(data.success?"✅ Roadmap saved and emailed to you!":"Error: "+data.message);
+  } catch(err){alert("Error: "+err.message);}
 }
 
-// ═══════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════
 //  CHAT
-// ═══════════════════════════════════════════════════════
-function addMsg(container, type, text) {
-  const el = document.createElement("div");
-  el.className = "msg " + type;
-  el.textContent = text;
-  container.appendChild(el);
-  container.scrollTop = container.scrollHeight;
-  return el;
+// ══════════════════════════════════════════════════
+function addMsg(container,type,text) {
+  const el=document.createElement("div"); el.className="msg "+type; el.textContent=text;
+  container.appendChild(el); container.scrollTop=container.scrollHeight; return el;
 }
 
 async function sendChat(mode) {
-  const isCareer  = mode === "career";
-  const inputEl   = document.getElementById(isCareer ? "inp-career" : "inp-main");
-  const container = document.getElementById(isCareer ? "msgs-career" : "msgs-main");
-  const hist      = isCareer ? carHist : mainHist;
-  const q = inputEl.value.trim();
-  if (!q) return;
-  inputEl.value = ""; inputEl.disabled = true;
-  addMsg(container, "user", q);
-  hist.push({ role:"user", content: q });
-  const bubble = document.createElement("div");
-  bubble.className = "msg bot";
-  bubble.innerHTML = '<span class="cur"></span>';
-  container.appendChild(bubble);
-  container.scrollTop = container.scrollHeight;
-  const system = isCareer
-    ? `You are Youhvah AI. Topic: ${career?.title||"careers"}. Direct and factual. Max 3-4 sentences. No filler.`
-    : `You are Youhvah AI — career chatbot for students in India. Direct, factual, concise. Max 3-4 sentences.`;
+  const isC=mode==="career";
+  const inp=document.getElementById(isC?"inp-career":"inp-main");
+  const box=document.getElementById(isC?"msgs-career":"msgs-main");
+  const hist=isC?carHist:mainHist;
+  const q=inp.value.trim(); if(!q)return;
+  inp.value=""; inp.disabled=true;
+  addMsg(box,"user",q);
+  hist.push({role:"user",content:q});
+  const bubble=document.createElement("div"); bubble.className="msg bot";
+  bubble.innerHTML='<span class="cur"></span>';
+  box.appendChild(bubble); box.scrollTop=box.scrollHeight;
+  const system=isC
+    ?`You are Youhvah AI. Topic: ${career?.title||"careers"}. Direct and factual. Max 3-4 sentences. No filler.`
+    :`You are Youhvah AI — career chatbot for students in India. Direct, factual. Max 3-4 sentences.`;
   try {
-    const reply = await streamClaude(hist, system, chunk => {
-      bubble.textContent = chunk;
-      bubble.innerHTML   = bubble.textContent + '<span class="cur"></span>';
-      container.scrollTop = container.scrollHeight;
+    const reply=await streamClaude(hist,system,chunk=>{
+      bubble.textContent=chunk;
+      bubble.innerHTML=bubble.textContent+'<span class="cur"></span>';
+      box.scrollTop=box.scrollHeight;
     });
-    bubble.textContent = reply;
-    hist.push({ role:"assistant", content: reply });
-  } catch(err) { bubble.textContent = err.message; bubble.style.color="#dc2626"; hist.pop(); }
-  inputEl.disabled = false; inputEl.focus();
+    bubble.textContent=reply;
+    hist.push({role:"assistant",content:reply});
+  } catch(err){bubble.textContent=err.message;bubble.style.color="#dc2626";hist.pop();}
+  inp.disabled=false; inp.focus();
 }
 
-// ═══════════════════════════════════════════════════════
-//  AUTH HELPERS
-// ═══════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════
+//  AUTH
+// ══════════════════════════════════════════════════
 function clearErrors() {
-  document.querySelectorAll(".ferr").forEach(e => e.textContent = "");
-  document.querySelectorAll(".alert").forEach(e => { e.className="alert"; e.textContent=""; });
+  document.querySelectorAll(".ferr").forEach(e=>e.textContent="");
+  document.querySelectorAll(".alert").forEach(e=>{e.className="alert";e.textContent="";});
 }
-
-function setAlert(id, msg, type) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.textContent = msg;
-  el.className   = "alert " + type;
-}
-
-function setErr(id, msg) { const el=document.getElementById(id); if(el) el.textContent=msg; }
-function isEmail(e)      { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e); }
-
-function togglePw(id, btn) {
-  const i = document.getElementById(id);
-  i.type        = i.type === "password" ? "text" : "password";
-  btn.style.opacity = i.type === "text" ? "1" : "0.4";
-}
-
+function setAlert(id,msg,type) { const el=document.getElementById(id); if(!el)return; el.textContent=msg; el.className="alert "+type; }
+function setErr(id,msg)        { const el=document.getElementById(id); if(el)el.textContent=msg; }
+function isEmail(e)            { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e); }
+function togglePw(id,btn)      { const i=document.getElementById(id); i.type=i.type==="password"?"text":"password"; btn.style.opacity=i.type==="text"?"1":"0.4"; }
 function strCheck(pw) {
-  let s = 0;
-  if(pw.length>=8)  s++;
-  if(/\d/.test(pw)) s++;
-  if(/[!@#$%^&*()_+\-=]/.test(pw)) s++;
-  if(pw.length>=12) s++;
+  let s=0;
+  if(pw.length>=8)s++; if(/\d/.test(pw))s++; if(/[!@#$%^&*()_+\-=]/.test(pw))s++; if(pw.length>=12)s++;
   const l=[{p:"0%",c:"#e5e7eb",t:""},{p:"25%",c:"#dc2626",t:"Weak"},{p:"50%",c:"#d97706",t:"Fair"},{p:"75%",c:"#2563eb",t:"Good"},{p:"100%",c:"#16a34a",t:"Strong"}];
   const v=l[s];
-  const f=document.getElementById("str-fill"); const lb=document.getElementById("str-lbl");
-  if(f){f.style.width=v.p;f.style.background=v.c;}
-  if(lb){lb.textContent=v.t;lb.style.color=v.c;}
+  const f=document.getElementById("str-fill"),lb=document.getElementById("str-lbl");
+  if(f){f.style.width=v.p;f.style.background=v.c;} if(lb){lb.textContent=v.t;lb.style.color=v.c;}
 }
 
-// ═══════════════════════════════════════════════════════
-//  SIGNUP
-// ═══════════════════════════════════════════════════════
 async function handleSignup() {
   clearErrors();
   const name=document.getElementById("s-name").value.trim();
@@ -728,26 +631,20 @@ async function handleSignup() {
   if(!isEmail(email)){setErr("s-email-err","Enter a valid email.");ok=false;}
   if(pw.length<8){setErr("s-pw-err","Min 8 characters.");ok=false;}
   else if(!/\d/.test(pw)){setErr("s-pw-err","Include at least one number.");ok=false;}
-  else if(!/[!@#$%^&*()_+\-=]/.test(pw)){setErr("s-pw-err","Include at least one symbol (!@#$...).");ok=false;}
+  else if(!/[!@#$%^&*()_+\-=]/.test(pw)){setErr("s-pw-err","Include at least one symbol.");ok=false;}
   if(pw!==confirm){setErr("s-confirm-err","Passwords do not match.");ok=false;}
   if(!ok)return;
-  const btn=document.querySelector("#f-signup .btn-primary");
-  btn.textContent="Creating account..."; btn.disabled=true;
+  const btn=document.querySelector("#f-s .btn-primary");
+  btn.textContent="Creating..."; btn.disabled=true;
   try {
-    const res=await fetch(`${BACKEND}/signup`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name,email,password:pw})});
+    const res=await fetch(`${BACKEND}/api/auth/signup`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name,email,password:pw})});
     const data=await res.json();
-    if(data.success){
-      pendingEmail=email;
-      document.getElementById("verify-email").textContent=email;
-      goTo("s-verify");
-    } else { setAlert("signup-alert",data.message,"err"); }
-  } catch(err){ setAlert("signup-alert","Cannot connect to server. Is the backend running?","err"); }
-  finally{ btn.textContent="Create account →"; btn.disabled=false; }
+    if(data.success){document.getElementById("v-email").textContent=email; goTo("s-verify");}
+    else setAlert("s-alert",data.message,"err");
+  } catch(err){setAlert("s-alert","Cannot reach server.","err");}
+  finally{btn.textContent="Create account →";btn.disabled=false;}
 }
 
-// ═══════════════════════════════════════════════════════
-//  LOGIN
-// ═══════════════════════════════════════════════════════
 async function handleLogin() {
   clearErrors();
   const email=document.getElementById("l-email").value.trim();
@@ -756,59 +653,50 @@ async function handleLogin() {
   if(!isEmail(email)){setErr("l-email-err","Enter a valid email.");ok=false;}
   if(!pw){setErr("l-pw-err","Enter your password.");ok=false;}
   if(!ok)return;
-  const btn=document.querySelector("#f-login .btn-primary");
+  const btn=document.querySelector("#f-l .btn-primary");
   btn.textContent="Signing in..."; btn.disabled=true;
   try {
-    const res=await fetch(`${BACKEND}/login`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email,password:pw})});
+    const res=await fetch(`${BACKEND}/api/auth/login`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email,password:pw})});
     const data=await res.json();
     if(data.success){
-      token=data.token;
-      localStorage.setItem("yhv_token",token);
+      token=data.token; localStorage.setItem("yhv_token",token);
       if(roadmap&&career) await saveRoadmapAfterLogin(token);
       loadDashboard(data.user);
-    } else { setAlert("login-alert",data.message,data.needsVerification?"wrn":"err"); }
-  } catch(err){ setAlert("login-alert","Cannot connect to server. Is the backend running?","err"); }
-  finally{ btn.textContent="Sign in →"; btn.disabled=false; }
+    } else setAlert("l-alert",data.message,data.needsVerification?"wrn":"err");
+  } catch(err){setAlert("l-alert","Cannot reach server.","err");}
+  finally{btn.textContent="Sign in →";btn.disabled=false;}
 }
 
 async function saveRoadmapAfterLogin(t) {
   try {
-    await fetch(`${BACKEND}/save-roadmap`,{method:"POST",headers:{"Content-Type":"application/json","Authorization":"Bearer "+t},
-      body:JSON.stringify({careerTitle:career.title,careerEmoji:career.emoji,roadmapSteps:roadmap})});
-  } catch(_) {}
+    await fetch(`${BACKEND}/api/auth/save-roadmap`,{
+      method:"POST",
+      headers:{"Content-Type":"application/json","Authorization":"Bearer "+t},
+      body:JSON.stringify({careerTitle:career.title,careerEmoji:career.emoji,roadmapSteps:roadmap})
+    });
+  } catch(_){}
 }
 
-function resend() {
-  const msg=document.getElementById("resend-msg");
-  msg.style.display="block";
-  setTimeout(()=>msg.style.display="none",4000);
-}
+function resend(){const m=document.getElementById("resend-msg");m.style.display="block";setTimeout(()=>m.style.display="none",4000);}
 
-// ═══════════════════════════════════════════════════════
-//  SESSION
-// ═══════════════════════════════════════════════════════
 async function fetchMe() {
   try {
-    const res=await fetch(`${BACKEND}/me`,{headers:{"Authorization":"Bearer "+token}});
+    const res=await fetch(`${BACKEND}/api/auth/me`,{headers:{"Authorization":"Bearer "+token}});
     const data=await res.json();
-    if(data.success){ loadDashboard(data.user); }
-    else { token=null; localStorage.removeItem("yhv_token"); goTo("s-home"); }
-  } catch(_){ goTo("s-home"); }
+    if(data.success){loadDashboard(data.user);}
+    else{token=null;localStorage.removeItem("yhv_token");goTo("s-home");}
+  } catch(_){goTo("s-home");}
 }
 
 function loadDashboard(user) {
-  document.getElementById("d-name").textContent   = user.name.split(" ")[0];
-  document.getElementById("d-pill").textContent   = user.name;
-  document.getElementById("d-email").textContent  = user.email;
-  document.getElementById("d-career").textContent = user.savedCareer?.title || "None yet";
+  document.getElementById("d-name").textContent  =user.name.split(" ")[0];
+  document.getElementById("d-pill").textContent  =user.name;
+  document.getElementById("d-email").textContent =user.email;
+  document.getElementById("d-career").textContent=user.savedCareer?.title||"None yet";
   goTo("s-dashboard");
 }
 
-function logout() {
-  token=null;
-  localStorage.removeItem("yhv_token");
-  goTo("s-home");
-}
+function logout(){token=null;localStorage.removeItem("yhv_token");goTo("s-home");}
 </script>
 </body>
 </html>
